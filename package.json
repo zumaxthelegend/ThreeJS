@@ -1,7 +1,7 @@
 {
-  "name": "svgParticles",
+  "name": "SVGParticles",
   "version": "1.0.0",
-  "description": "svg particles",
+  "description": "SVG Particles",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"

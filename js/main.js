@@ -50,7 +50,7 @@ const getArrayFromImage = (img) => {
 	return fillUp(imageCoords, 5350);
 }
 
-let images = ['img/cute-ghost.svg', 'img/dog.svg', 'img/penguin.svg', 'img/koala.svg', 'img/paw.svg', 'img/cat.svg',];
+let images = ['img/cute-ghost.svg', 'img/dog.svg', 'img/penguin.svg', 'img/koala.svg', 'img/paw.svg', 'img/cat.svg', 'img/doge.svg', 'img/kek.svg'];
 
 loadImages(images, (loadedImages) => {
 	let gallery = [];
@@ -61,7 +61,7 @@ loadImages(images, (loadedImages) => {
 	let camera, controls, scene, renderer,geometry;
 
 
-	function init() {
+	const init = () => {
 
 		scene = new THREE.Scene();
 		scene.background = new THREE.Color( 0xcccccc );
@@ -74,7 +74,7 @@ loadImages(images, (loadedImages) => {
 		let container = document.getElementById( 'container' );
 		container.appendChild( renderer.domElement );
 
-		camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 2000 );
+		camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 100000 );
 		camera.position.z = 800;
 
 		controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -119,11 +119,11 @@ loadImages(images, (loadedImages) => {
 		i++;
 		requestAnimationFrame( animate );
 
-		geometry.vertices.forEach( function(particle, index){
+		geometry.vertices.forEach((particle, index) =>{
 			  let dX, dY, dZ;
-			  dX = Math.sin(i / 10 + index / 2) / 10;
-			  dY = Math.cos(i / 10 + index / 2) / 10;
-			  dZ = Math.sin(i / 10 + index / 2) / 10;
+			  dX = Math.sin(i / 10 + index / 2) / 20;
+			  dY = Math.cos(i / 10 + index / 2) / 20;
+			  dZ = Math.sin(i / 10 + index / 2) / 20;
 			  particle.add(new THREE.Vector3(dX, dY, dZ));
 			});
 
@@ -137,7 +137,7 @@ loadImages(images, (loadedImages) => {
 	
 	
 
-	function render() {
+	const render = () => {
 		renderer.render( scene, camera );
 	}
 
@@ -149,9 +149,9 @@ loadImages(images, (loadedImages) => {
 	document.body.addEventListener('click', () => {
 		current++;
 		current = current % gallery.length;
-		geometry.vertices.forEach( function(particle, index){
-			let tl = new TimelineMax();
-			tl.to(particle,1,{x:gallery[current][index][0], y:gallery[current][index][1]})
+		geometry.vertices.forEach((particle, index) => {
+			let tl = new  gsap.timeline();
+			tl.to(particle,1.5,{x:gallery[current][index][0], y:gallery[current][index][1]})
 		});
 	});
 
