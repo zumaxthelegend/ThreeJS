@@ -3,8 +3,6 @@ let canvas = document.createElement('canvas');
 let ctx = canvas.getContext('2d');
 canvas.width = size;
 canvas.height = size;
-document.body.appendChild(canvas);
-
 
 const loadImages = (paths, whenLoaded) => {
 	let imgs = [];
@@ -47,10 +45,20 @@ const getArrayFromImage = (img) => {
 			}
 		}
 	}
-	return fillUp(imageCoords, 5350);
+	return fillUp(imageCoords, 7000);
 }
 
-let images = ['img/cute-ghost.svg', 'img/skull.svg', 'img/dog.svg', 'img/penguin.svg', 'img/koala.svg', 'img/paw.svg', 'img/cat.svg', 'img/doge.svg', 'img/kek.svg'];
+let images = [
+'img/cute-ghost.svg', 
+'img/skull.svg', 
+'img/dog.svg', 
+'img/penguin.svg', 
+'img/koala.svg', 
+'img/paw.svg', 
+'img/cat.svg',
+'img/doge.svg', 
+'img/kek.svg'
+ ];
 
 loadImages(images, (loadedImages) => {
 	let gallery = [];
