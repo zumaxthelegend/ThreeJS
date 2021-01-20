@@ -45,7 +45,7 @@ const getArrayFromImage = (img) => {
 			}
 		}
 	}
-	return fillUp(imageCoords, 7000);
+	return fillUp(imageCoords, 5000);
 }
 
 let images = [
