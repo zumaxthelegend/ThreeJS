@@ -50,7 +50,7 @@ const getArrayFromImage = (img) => {
 	return fillUp(imageCoords, 5350);
 }
 
-let images = ['img/cute-ghost.svg', 'img/dog.svg', 'img/penguin.svg', 'img/koala.svg', 'img/paw.svg', 'img/cat.svg', 'img/doge.svg', 'img/kek.svg'];
+let images = ['img/cute-ghost.svg', 'img/skull.svg', 'img/dog.svg', 'img/penguin.svg', 'img/koala.svg', 'img/paw.svg', 'img/cat.svg', 'img/doge.svg', 'img/kek.svg'];
 
 loadImages(images, (loadedImages) => {
 	let gallery = [];
